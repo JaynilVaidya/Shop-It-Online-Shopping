@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>ShopIt! Cart</title>
+    <link rel="stylesheet" href="shopit.css">
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <body ng-app="app" ng-controller="ctrl" ng-init="getdata()">
+    <header>
+      <h1>ShopIt!</h1>
+      <p>One stop to shop it all.</p>
+    </header>
+
+    <div class="container" ng-repeat="x in data" ng-if="x.qty!=0">
+      <div class="item">
+        <img src={{x.imgurl}} alt="">
+        <h3>LaptopCompany1 Model-1</h3>
+        <p>Qty: {{x.qty}}</p>
+        <p>Price: {{x.price}}</p>
+        <button type="button" class="A2C" ng-click="remove($index)" style="float:right">Remove</button>
+      </div>
+
+      <div class="price">
+        <h3>{{x.price*x.qty|currency}}</h3>
+      </div>
+
+    </div>
+
+    <div class="container">
+      <div class="item">
+        <h4>GRAND TOTAL</h4>
+      </div>
+      <div class="price">
+        <h3>{{getTotal()|currency}}</h3>
+      </div>
+    </div>
+
+    <div class="address">
+      <form action="javascript:alert('!!THANK YOU FOR SHOPPING WITH US!!'+'\nYour order will be delivered in 2-5 buisness days.')">
+        <h2>ADDRESS:-</h2>
+        <h3>House No.: &emsp;<input type="text" required></h3><br>
+        <h3>Resident Name.: &emsp;<input type="text" required></h3><br>
+        <h3>Road Name/no.: &emsp;<input type="text"></h3><br>
+        <h3>Landmark: &emsp;<input type="text" required></h3><br>
+        <h3>Area/Town: &emsp;<input type="text" required></h3><br>
+        <h3>City &emsp;<input type="text" required></h3><br>
+        <h3>State &emsp;<input type="text" required></h3><br>
+        <h3>Email address:&emsp;<input type="email" id="email" required><br></h3>
+    </div>
+
+    <button class="end" type="submit">Proceed To Pay</button>
+    </form>
+
+  <script type="text/javascript">
+    var app=angular.module('app',[]);
+    app.controller('ctrl',function($scope,$window){
+      $scope.data=[];
+      $scope.total=0;
+      $scope.getdata=function(){
+        var params = (new URL(document.location)).searchParams;
+
+        $scope.data=[{qty:params.get('lm1'),
+                 imgurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZKPuN7RvvajNsfxmQOlz2AQVtBV0tX3a8A&usqp=CAU',
+                 price:1500,
+                                      },
+                {qty:params.get('lm2'),
+                 imgurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfWUedrUaFSWBb_xrw_j3j2JM5f-e6Brx9Zw&usqp=CAU',
+                 price:1600,
+                                      },
+                {qty:params.get('lm3'),
+                 imgurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0mFF9Fa94bO_7BS6v4NV4ynkkOquD2faPFw&usqp=CAU',
+                 price:1700,
+                                      },
+                {qty:params.get('lm4'),
+                 imgurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYYV1yxpq7BbcTshWndj3az5UyznIdHredoQ&usqp=CAU',
+                 price:1800,
+                                      },
+                {qty:params.get('lm5'),
+                 imgurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcN3Py6IMj4Ml8ggVNpggaSVj4vbGzSQEXhw&usqp=CAU',
+                 price:1900,
+                                      },
+                {qty:params.get('lm6'),
+                 imgurl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RdodNBMPr39CX0HA9vskW9LRgsTJG9REZQ&usqp=CAU',
+                 price:2000,
+                                      },
+                {qty:params.get('pm1'),
+                 imgurl:'https://img.etimg.com/thumb/msid-59424967,width-640,resizemode-4,imgsize-150364/nokia-3310.jpg',
+                 price:500,
+                                      },
+                {qty:params.get('pm2'),
+                 imgurl:'https://www.gizmochina.com/wp-content/uploads/2019/01/Infinix-Smart-2-HD.png',
+                 price:600,
+                                      },
+                {qty:params.get('pm3'),
+                 imgurl:'https://www.setaswall.com/wp-content/uploads/2019/09/Realme-5.jpg',
+                 price:700,
+                                      },
+                {qty:params.get('pm4'),
+                 imgurl:'https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg',
+                 price:800,
+                                      },
+                {qty:params.get('pm5'),
+                 imgurl:'https://candytech.in/wp-content/uploads/2018/05/Xiaomi-Mi8.jpg',
+                 price:900,
+                                      },
+                {qty:params.get('pm6'),
+                 imgurl:'https://newcastlebeach.org/images/mobile-hd.jpg',
+                 price:1000,
+               }];
+       $scope.getTotal=function(){
+         var total=0
+         for(var i=0;i<$scope.data.length;i++){
+           total+= $scope.data[i].qty*$scope.data[i].price;
+         }
+         return total;
+            };
+
+       $scope.remove = function (index) {
+                $scope.data[index].qty=0;
+               //$window.alert("Row Index: " + index);
+           };
+      };
+    });
+
+  </script>
+  </body>
+</html>

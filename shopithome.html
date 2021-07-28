@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ShopIt</title>
+    <link rel="stylesheet" href="shopit.css">
+  </head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript">
+  function sendJS(){
+        document.getElementById("theform").submit();
+  }
+</script>
+
+  <body ng-app="app" ng-controller="add">
+    <header>
+      <h1>ShopIt!</h1>
+      <p>One stop to shop it all.</p>
+    </header>
+    <div class="toptag">
+      <h1>ShopIt!</h1>
+      <p>One stop to shop it all.</p>
+    </div>
+    <form id="theform" target="_blank" action="shopitcart.html" method="get">
+    <div class="topnav">
+      <a href="#">Home</a>
+      <a href="#">My acc</a>
+      <a href="#">My orders</a>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7JXAvASPtvg0pHl0EjLcPQaNFbSwWsAd6dd2nLDZaEB-mroh-Iw-jSxtXnTng57z1dtU&usqp=CAU" alt="">
+      <sup>{{lm1+lm2+lm3+lm4+lm5+lm6+pm1+pm2+pm3+pm4+pm5+pm6}}</sup>
+      <a class="cart" onclick="sendJS()" >Cart</a>
+    </div>
+
+
+    <div class="sidebar">
+      <h4>Welcome, {{uname}}</h4>
+      <p>ShopIt! by categories</p>
+      <div class="dplace">
+        <p>Laptops</p>
+        <div class="dcont">
+          <a  href="#">LaptopCompany1</a><br>
+          <a  href="#">LaptopCompany2</a><br>
+          <a  href="#">LaptopCompany3</a>
+        </div>
+      </div>
+
+      <div class="dplace">
+        <p>Phones</p>
+        <div class="dcont">
+          <a  href="#">PhoneCompany1</a><br>
+          <a  href="#">PhoneCompany2</a><br>
+          <a  href="#">PhoneCompany3</a>
+        </div>
+      </div>
+
+      <div class="dplace">
+        <p>Tablets</p>
+        <div class="dcont">
+          <a  href="#">TabletCompany1</a><br>
+          <a  href="#">TabletCompany2</a><br>
+          <a  href="#">TabletCompany3</a>
+        </div>
+      </div>
+
+      <div class="dplace">
+        <p>Notebooks</p>
+        <div class="dcont">
+          <a  href="#">NoteBookCompany1</a><br>
+          <a  href="#">NoteBookCompany2</a><br>
+          <a  href="#">NoteBookCompany3</a>
+        </div>
+      </div>
+
+        </div>
+
+    <div class="body">
+      <div class="products">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZKPuN7RvvajNsfxmQOlz2AQVtBV0tX3a8A&usqp=CAU" alt="">
+        <p>LaptopCompany1&emsp;Model-1&emsp;Price: {{ 1500 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="lm1=0" ng-click="lm1=lm1+1">Add To Cart  Qty:<input type="number" name="lm1" value="{{lm1}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="lm1=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfWUedrUaFSWBb_xrw_j3j2JM5f-e6Brx9Zw&usqp=CAU" alt="">
+        <p>LaptopCompany1&emsp;Model-2&emsp;Price: {{ 1600 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="lm2=0" ng-click="lm2=lm2+1">Add To Cart  Qty:<input type="number" name="lm2" value="{{lm2}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="lm2=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0mFF9Fa94bO_7BS6v4NV4ynkkOquD2faPFw&usqp=CAU" alt="">
+        <p>LaptopCompany1&emsp;Model-3&emsp;Price: {{ 1700 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="lm3=0" ng-click="lm3=lm3+1">Add To Cart  Qty:<input type="number" name="lm3" value="{{lm3}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="lm3=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYYV1yxpq7BbcTshWndj3az5UyznIdHredoQ&usqp=CAU" alt="">
+        <p>LaptopCompany2&emsp;Model-4&emsp;Price: {{ 1800 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="lm4=0" ng-click="lm4=lm4+1">Add To Cart  Qty:<input type="number" name="lm4" value="{{lm4}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="lm4=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcN3Py6IMj4Ml8ggVNpggaSVj4vbGzSQEXhw&usqp=CAU" alt="">
+        <p>LaptopCompany2&emsp;Model-5&emsp;Price: {{ 1900 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="lm5=0" ng-click="lm5=lm5+1">Add To Cart  Qty:<input type="number" name="lm5" value="{{lm5}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="lm5=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RdodNBMPr39CX0HA9vskW9LRgsTJG9REZQ&usqp=CAU" alt="">
+        <p>LaptopCompany2&emsp;Model-6&emsp;Price: {{ 2000 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="lm6=0" ng-click="lm6=lm6+1">Add To Cart  Qty:<input type="number" name="lm6" value="{{lm6}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="lm6=0">RESET</button>
+      </div>
+
+      <div class="products">
+        <img src="https://img.etimg.com/thumb/msid-59424967,width-640,resizemode-4,imgsize-150364/nokia-3310.jpg" alt="">
+        <p>PhoneCompany1&emsp;Model-1&emsp;Price: {{ 500 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="pm1=0" ng-click="pm1=pm1+1">Add To Cart  Qty:<input type="number" name="pm1" value="{{pm1}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="pm1=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://www.gizmochina.com/wp-content/uploads/2019/01/Infinix-Smart-2-HD.png" alt="">
+        <p>PhoneCompany1&emsp;Model-2&emsp;Price: {{ 600 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="pm2=0" ng-click="pm2=pm2+1">Add To Cart  Qty:<input type="number" name="pm2" value="{{pm2}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="pm2=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://www.setaswall.com/wp-content/uploads/2019/09/Realme-5.jpg" alt="">
+        <p>PhoneCompany1&emsp;Model-3&emsp;Price: {{ 700 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="pm3=0" ng-click="pm3=pm3+1">Add To Cart  Qty:<input type="number" name="pm3" value="{{pm3}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="pm3=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://www.gizmochina.com/wp-content/uploads/2020/05/iphone-12-pro-max-family-hero-all-600x600.jpg" alt="">
+        <p>PhoneCompany2&emsp;Model-4&emsp;Price: {{ 800 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="pm4=0" ng-click="pm4=pm4+1">Add To Cart  Qty:<input type="number" name="pm4" value="{{pm4}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="pm4=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://candytech.in/wp-content/uploads/2018/05/Xiaomi-Mi8.jpg" alt="">
+        <p>PhoneCompany2&emsp;Model-5&emsp;Price: {{ 900 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="pm5=0" ng-click="pm5=pm5+1">Add To Cart  Qty:<input type="number" name="pm5" value="{{pm5}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="pm5=0">RESET</button>
+      </div>
+      <div class="products">
+        <img src="https://newcastlebeach.org/images/mobile-hd.jpg" alt="">
+        <p>PhoneCompany2&emsp;Model-6&emsp;Price: {{ 1000 | currency}}</p>
+        <button type="button" class="A2C"  ng-init="pm6=0" ng-click="pm6=pm6+1">Add To Cart  Qty:<input type="number" name="pm6" value="{{pm6}}" style="width:23px;text-align:left" readonly=true>
+        <button type="button" class="A2C" ng-click="pm6=0">RESET</button>
+      </div>
+
+    </div>
+    </form>
+    <script>
+      angular.module('app',[]).controller('add',function($scope,$window) {
+                 $scope.lm1 = 0;
+                 $scope.lm2 = 0;
+                 $scope.lm3 = 0;
+                 $scope.lm4 = 0;
+                 $scope.lm5 = 0;
+                 $scope.lm6 = 0;
+                 $scope.pm1 = 0;
+                 $scope.pm2 = 0;
+                 $scope.pm3 = 0;
+                 $scope.pm4 = 0;
+                 $scope.pm5 = 0;
+                 $scope.pm6 = 0;
+                 var params = (new URL(document.location)).searchParams;
+                 var name= params.get('uname');
+                 if(name.length>1) $scope.uname= name;
+                 else $scope.uname='User';
+          });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+body{
+  //background-image: url('https://free4kwallpapers.com/uploads/originals/2018/01/18/i-use-this-photo-i-took-as-my-background-wallpaper.jpg');
+  //background-image: url(https://www.supermarketnews.com/sites/supermarketnews.com/files/styles/article_featured_retina/public/busyconsumers_0.jpg?itok=7RPdmM_R);
+  background-size: auto;
+  animation: myanimation 100s infinite;
+}
+
+@keyframes myanimation {
+  0% {background-color: #663300;}
+  25%{background-color:#cc9900;}
+  50%{background-color:#009933;}
+  75%{background-color:#990000;}
+  100% {background-color: #990000;}
+}
+
+#login{
+  text-align: center;
+}
+
+#timeup{
+  display: none;
+  font-size: 22px;
+  color: #cc0000;
+}
+
+#enterotp{
+  display: none;
+  text-align: center;
+}
+
+header{
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family:Candara,"Star Wars" ;
+  letter-spacing: 1px;
+  position: static;
+  height: 100px;
+  top: 0;
+  z-index: 1;
+}
+
+.toptag{
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family:Candara,"Star Wars" ;
+  letter-spacing: 1px;
+  position: fixed;
+  height: 120px;
+  top: 0;
+  z-index: -1;
+}
+
+.topnav{
+  margin-top: 10px;
+  background-color: #fffff0;
+  width: 100%;
+  height: 52px;
+  background-color: #ff99ff;
+}
+
+.topnav a{
+  float: left;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font-size: 26px;
+  font-family: Garamond,"Times Roman";
+  width: 200px;
+  padding: 10.5px 20px;
+  border: 1px solid #0066ff;
+  background-color: #9999ff;
+  transition-duration: 1s;
+}
+
+.topnav img{
+  padding:5px;
+  padding-left: 100px;
+  float: left;
+  height: 40px;
+  width: 50px;
+}
+
+.topnav sup{
+  float: left;
+  background-color: #ffff99;
+  text-align: center;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.topnav a:hover{
+    background-color: #0000ff;
+    color: white;
+}
+
+.topnav a.cart{
+  float: left;
+  border: none;
+  padding-left: 0px;
+  background-color: #ff99ff;
+}
+
+.sidebar{
+  position: sticky;
+  background-color: #4c4c4c;
+  color: white;
+  float: left;
+  height: 1000px;
+  margin-top: 10px;
+  width: 195px;
+  height: 100%;
+  padding-top: 5px;
+  padding-left: 5px;
+  box-shadow: 0px 16px 40px 0px rgba(0,0,0.5,0.5);
+}
+
+.dplace p{
+  float: none;
+  text-decoration: none;
+  color: #9df6c7;
+  padding: 10px 10px;
+  font-family: "Times Roman",Verdana,"Brush Script MT";
+}
+
+.dcont{
+  display: none;
+  font-family: "Courier";
+  padding: 10px 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.dcont a{
+  text-decoration: none;
+  color: #9df6c7;
+  display: block;
+}
+
+.dplace:hover .dcont {
+  display: block;
+}
+
+.body{
+  width: auto;
+  margin-left: 210px;
+  padding-left: 20px;
+  padding-top: 5px;
+}
+
+.products{
+  z-index: 1;
+  background-color: white;
+  float: left;
+  height: 340px;
+  width:340px;
+  margin-top: 5px;
+  margin-left: 15px;
+  overflow:hidden;
+  border: 1px solid gray;
+  text-overflow: ellipsis;
+}
+
+.A2C{
+  border-radius: 15px;
+  width: 160px;
+  height: 40px;
+  margin: 0px 5px;
+}
+
+img{
+  width: 100%;
+  height: 70%;
+}
+
+.container{
+  height: 150px;
+  margin-top: 50px;
+}
+
+.item{
+  background-color: white;
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  height: inherit;
+  margin-left: 5%;
+}
+
+.item h3{
+  margin: auto;
+  text-align: center;
+}
+
+.item h4{
+  font-family: cursive;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.item img{
+  width: 35%;
+  height: 100%;
+  float: left;
+}
+
+.price{
+  background-color: white;
+  width=30%;
+  margin-left: 75%;
+  height: inherit;
+}
+
+.price h3{
+  font-family: cursive;
+  padding-top: 50px;
+  margin: auto;
+  text-align: center;
+}
+
+.address {
+  text-align: left;
+  margin-left: 40%;
+  margin-top: 50px;
+  padding: 50px;
+}
+
+.address input{
+  width: 200px;
+  height: 20px;
+}
+
+.end{
+  width: 500px;
+  height: 50px;
+  margin: 0% 30%;
+  border-radius: 50px;
+}

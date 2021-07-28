@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="shopit.css">
+  </head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script type="text/javascript">
+  var code;
+  function otp(){
+    var uname=document.getElementById('uname').value;
+    if(uname.length<1){
+      alert('Invalid Username entered!');
+      return;
+    }
+
+    var phno=document.getElementById('phno').value;
+    if(phno<6000000000 || phno>9999999999){
+      alert('Invalid Phone number entered!');
+      return;
+        }
+
+    document.getElementById('timeup').style.display='none';
+    if(document.getElementById('enterotp').style.display!='block') document.getElementById('enterotp').style.display='block';
+    if(document.getElementById('counter').style.display!='block') document.getElementById('counter').style.display!='block';
+    code= Math.floor(Math.random() * (10000 - 1000) ) + 1000;
+    alert('Your OTP is : '+code+'\nDo not share this security code with anybody.');
+  }
+
+  function verify(){
+    var val=document.getElementById("code").value;
+    if(code == val){
+      document.getElementById("login").submit();
+    }
+    else{
+      document.getElementById('code').value = '';
+      alert('Incorrect OTP');
+    }
+  }
+
+  var app=angular.module('app',[]).controller('myctrl',function($scope,$timeout){
+    $scope.counter = 20;
+    var stopped;
+    $scope.countdown = function(n) {
+      $timeout.cancel(stopped);
+      $scope.counter = n;
+      stopped = $timeout(function() {
+      $scope.counter--;
+      $scope.countdown($scope.counter);}, 1000);
+
+    if($scope.counter==0){
+      var code=null;
+      document.getElementById('timeup').style.display='block';
+      $timeout.cancel(stopped);
+    }
+  };
+
+  });
+</script>
+
+  <body ng-app='app' ng-controller='myctrl'>
+    <header>
+      <h1>ShopIt!</h1>
+      <p>One stop to shop it all.</p>
+    </header>
+    <div class="toptag">
+      <h1>ShopIt!</h1>
+      <p>One stop to shop it all.</p>
+    </div>
+
+    <form id="login" action="shopithome.html" method="get">
+      <h3>USERNAME:-</h3>
+      <input type="text" name="uname" id="uname" required>
+      <h3>Mobile Number:-</h3>
+      <input type="number" id="phno" required><br><br>
+      <button type="button" onclick="otp()" ng-click='countdown(20)'>Generate OTP</button><br><br>
+    </form>
+      <div id="enterotp">
+        <h3>Enter OTP: </h3>
+        <input type="number" id="code"><br><br>
+        <button type="button" onclick="verify()">SUBMIT</button>
+        <div id="timeup">
+          <button type="button" onclick="otp()" ng-click='countdown(20)'>Resend OTP</button><br><br>
+          <h4>Your Time is up!! Click on 'Resend OTP to resend it.'</h4>
+        </div>
+        <p id="counter">The otp will be invalid after: {{counter}}s</p>
+      </div>
+
+  </body>
+</html>
